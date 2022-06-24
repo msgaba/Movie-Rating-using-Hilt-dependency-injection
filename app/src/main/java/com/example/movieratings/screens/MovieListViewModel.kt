@@ -43,10 +43,12 @@ class MovieListViewModel @Inject constructor(
                     when (id) {
                         MOVIE_LIST_ID -> {
                             mList.add(0, movieItemList)
+                            // second list api call
                             getList(TV_LIST_ID)
                         }
                         TV_LIST_ID -> {
                             mList.add(1, movieItemList)
+                            // third list api call
                             getList(WEB_SERIES_LIST_ID)
                         }
                         WEB_SERIES_LIST_ID -> {

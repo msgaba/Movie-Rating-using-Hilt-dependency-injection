@@ -40,6 +40,7 @@ class HomeActivity : AppCompatActivity(), HeaderItemClickListener,
         mViewModel.getList(MOVIE_LIST_ID)
     }
 
+    /** view click actions **/
     private fun viewClicks() {
         binding.error.errorContainer.setOnClickListener {
             binding.error.errorContainer.hide()
@@ -48,6 +49,7 @@ class HomeActivity : AppCompatActivity(), HeaderItemClickListener,
         }
     }
 
+    /** header setup **/
     private fun headerSetup() {
         headerAdapter = HeaderAdapter(this)
         headerLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -59,11 +61,13 @@ class HomeActivity : AppCompatActivity(), HeaderItemClickListener,
         headerAdapter.list(headerList)
     }
 
+    /** callback for header clicks **/
     override fun onHeaderClicked(pos: Int) {
         headerAdapter.list(modifyHeader(headerAdapter.list(), pos))
         binding.viewPager.currentItem = pos
     }
 
+    /** list view pager setup **/
     private fun viewPagerSetup(viewPager: ViewPager?) {
         adapter = ViewPagerAdapter(this, mViewModel.mList, this)
         viewPager!!.adapter = adapter
@@ -88,6 +92,7 @@ class HomeActivity : AppCompatActivity(), HeaderItemClickListener,
         })
     }
 
+    /** observer for events in viewmodel **/
     private fun observer() {
         mViewModel.listState.observe(this) { state ->
             when {
@@ -109,6 +114,7 @@ class HomeActivity : AppCompatActivity(), HeaderItemClickListener,
         }
     }
 
+    /** method to maintain loading state of UI **/
     private fun loading(isLoading: Boolean) {
         binding.apply {
             loader.visibleOnCondition(isLoading)
@@ -116,6 +122,7 @@ class HomeActivity : AppCompatActivity(), HeaderItemClickListener,
         }
     }
 
+    /** callback for list item click **/
     override fun onItemClicked(id: Int) {
         navigate(this, id)
     }

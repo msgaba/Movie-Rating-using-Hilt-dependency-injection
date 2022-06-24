@@ -14,6 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.movieratings"
+        buildConfigField "String", 'API_KEY', "\"2d66e20fd04b7f1b48b6a9bf65b3fedc\""
         minSdk 21
         targetSdk 31
         versionCode 1

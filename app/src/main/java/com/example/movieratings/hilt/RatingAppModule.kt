@@ -19,6 +19,8 @@ import javax.inject.Singleton
  */
 @Module
 @InstallIn(SingletonComponent::class)
+
+/** defining dependency for [ServiceApi] class **/
 object ApiModule {
     @Provides
     @Singleton
@@ -34,9 +36,11 @@ object ApiModule {
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
+    /** defining dependency for [DetailsRepository] class **/
     @Binds
     abstract fun detailsRepository(detailsRepositoryImpl: DetailsRepositoryImpl): DetailsRepository
 
+    /** defining dependency for [MovieListRepository] class **/
     @Binds
     abstract fun movieListRepository(movieListRepositoryImpl: MovieListRepositoryImpl): MovieListRepository
 }

@@ -30,6 +30,7 @@ class MovieDetailActivity : AppCompatActivity() {
         mViewModel.details(movieId)
     }
 
+    /** extracting intent extras **/
     private fun extras() {
         intent?.extras?.let {
             if (it.containsKey(KEY_MOVIE_ID))
@@ -37,10 +38,13 @@ class MovieDetailActivity : AppCompatActivity() {
         }
     }
 
+    /** view click actions **/
     private fun viewClicks() {
+        // click action for back button
         binding.back.setOnClickListener {
             onBackPressed()
         }
+        // click action for error view
         binding.error.errorContainer.setOnClickListener {
             binding.error.errorContainer.hide()
             loading(true)
@@ -48,6 +52,7 @@ class MovieDetailActivity : AppCompatActivity() {
         }
     }
 
+    /** state observer for events in viewmodel **/
     private fun observer() {
         mViewModel.detailState.observe(this) { state ->
             when {
@@ -69,6 +74,7 @@ class MovieDetailActivity : AppCompatActivity() {
         }
     }
 
+    /** method to maintain loading state of UI **/
     private fun loading(isLoading: Boolean) {
         binding.apply {
             loader.visibleOnCondition(isLoading)
@@ -76,6 +82,7 @@ class MovieDetailActivity : AppCompatActivity() {
         }
     }
 
+    /** populating data on UI **/
     private fun populateData() {
         binding.apply {
             name.text = mViewModel.movieItem.title
