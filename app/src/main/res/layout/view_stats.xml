@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/stats_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/vote"
+        android:layout_width="@dimen/dp_size_72"
+        android:layout_height="@dimen/dp_size_72"
+        android:layout_marginStart="@dimen/dp_size_16"
+        android:gravity="center"
+        android:text="9.4"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_size_28"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/vote_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Votes"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_size_16"
+        app:layout_constraintEnd_toEndOf="@id/vote"
+        app:layout_constraintStart_toStartOf="@id/vote"
+        app:layout_constraintTop_toBottomOf="@id/vote" />
+
+    <View
+        android:id="@+id/separator_1"
+        android:layout_width="@dimen/dp_size_2"
+        android:layout_height="@dimen/dp_size_0"
+        android:layout_margin="@dimen/dp_size_16"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="@id/vote_text"
+        app:layout_constraintStart_toEndOf="@id/vote"
+        app:layout_constraintTop_toTopOf="@id/vote" />
+
+    <TextView
+        android:id="@+id/runtime"
+        android:layout_width="@dimen/dp_size_72"
+        android:layout_height="@dimen/dp_size_72"
+        android:layout_marginStart="@dimen/dp_size_16"
+        android:gravity="center"
+        android:text="9.4"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_size_28"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/separator_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/runtime_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Runtime"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_size_16"
+        app:layout_constraintEnd_toEndOf="@id/runtime"
+        app:layout_constraintStart_toStartOf="@id/runtime"
+        app:layout_constraintTop_toBottomOf="@id/runtime" />
+
+    <View
+        android:id="@+id/separator_2"
+        android:layout_width="@dimen/dp_size_2"
+        android:layout_height="@dimen/dp_size_0"
+        android:layout_margin="@dimen/dp_size_16"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="@id/runtime_text"
+        app:layout_constraintStart_toEndOf="@id/runtime"
+        app:layout_constraintTop_toTopOf="@id/runtime" />
+
+    <TextView
+        android:id="@+id/language"
+        android:layout_width="@dimen/dp_size_72"
+        android:layout_height="@dimen/dp_size_72"
+        android:layout_marginStart="@dimen/dp_size_16"
+        android:gravity="center"
+        android:text="9.4"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_size_28"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/separator_2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/language_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Language"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_size_16"
+        app:layout_constraintEnd_toEndOf="@id/language"
+        app:layout_constraintStart_toStartOf="@id/language"
+        app:layout_constraintTop_toBottomOf="@id/language" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Movie Ratings</string>
+    <string name="movies">Movies</string>
+    <string name="error_msg">Details unavailable.\nTap to try again.</string>
+</resources>
