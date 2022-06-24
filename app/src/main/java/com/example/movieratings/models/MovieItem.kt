@@ -1,11 +1,15 @@
 package com.example.movieratings.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 /**
  * Created by Ankita
  */
+@Entity(tableName = "movie")
 data class MovieItem(
+    @PrimaryKey
     @SerializedName("id")
     var id: Int = 0,
     @SerializedName("title")
@@ -20,6 +24,7 @@ data class MovieItem(
     var runtime: Int = 0,
     @SerializedName("original_language")
     var lang: String = "",
+    var categoryId: Int = 0,
 )
 
 data class MovieItemList(

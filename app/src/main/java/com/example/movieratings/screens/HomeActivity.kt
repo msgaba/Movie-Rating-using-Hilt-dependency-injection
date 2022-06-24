@@ -7,13 +7,17 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
+import com.example.movieratings.common.MovieUIEvent
 import com.example.movieratings.databinding.ActivityHomeBinding
 import com.example.movieratings.models.headerList
 import com.example.movieratings.models.modifyHeader
 import com.example.movieratings.screens.header.HeaderAdapter
 import com.example.movieratings.screens.header.HeaderItemClickListener
 import com.example.movieratings.screens.movie_detail.MovieDetailActivity.Companion.navigate
-import com.example.movieratings.util.*
+import com.example.movieratings.util.ViewPagerAdapter
+import com.example.movieratings.util.hide
+import com.example.movieratings.util.show
+import com.example.movieratings.util.visibleOnCondition
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,7 +41,7 @@ class HomeActivity : AppCompatActivity(), HeaderItemClickListener,
         viewClicks()
         observer()
         headerSetup()
-        mViewModel.getList(MOVIE_LIST_ID)
+        mViewModel.onEvent(MovieUIEvent.PopulateData)
     }
 
     /** view click actions **/
@@ -45,7 +49,7 @@ class HomeActivity : AppCompatActivity(), HeaderItemClickListener,
         binding.error.errorContainer.setOnClickListener {
             binding.error.errorContainer.hide()
             loading(true)
-            mViewModel.getList(MOVIE_LIST_ID)
+            mViewModel.onEvent(MovieUIEvent.PopulateData)
         }
     }
 
@@ -69,7 +73,7 @@ class HomeActivity : AppCompatActivity(), HeaderItemClickListener,
 
     /** list view pager setup **/
     private fun viewPagerSetup(viewPager: ViewPager?) {
-        adapter = ViewPagerAdapter(this, mViewModel.mList, this)
+        adapter = ViewPagerAdapter(this, mViewModel.dataState.mList, this)
         viewPager!!.adapter = adapter
         viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrolled(
