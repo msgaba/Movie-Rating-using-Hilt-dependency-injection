@@ -1,16 +1,15 @@
 # Movie-Rating-using-Hilt-dependency-injection
-A sample project to checkout movie ratings using hilt
+A sample project to checkout movie ratings depicting usage of hilt dependency injection, room database, retrofit and kotlin coroutines
 ## Screenshots
 ![Blank diagram (15)](https://user-images.githubusercontent.com/71500144/175665222-d2143bc4-b5b3-4d0e-8b63-1d79870f4fee.png)
 
 ## Concepts used
 - Hilt dependency injection
 - Room database
-- Livedata
-- Coroutines
+- Kotlin Coroutines
 - Retrofit
 - MVVM architecture
-- Kotlin
+- Livedata
 - View binding
 
 ## Design
