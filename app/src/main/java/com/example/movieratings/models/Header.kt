@@ -9,11 +9,13 @@ data class Header(
 )
 
 /** headers list **/
-val headerList: MutableList<Header> = arrayListOf(
-    Header("Movies", true),
-    Header("Tv", false),
-    Header("Web Series", false)
-)
+fun headerList(): MutableList<Header> {
+    return arrayListOf(
+        Header("Movies", true),
+        Header("Tv", false),
+        Header("Web Series", false)
+    )
+}
 
 /** modifying header list as per category selection **/
 fun modifyHeader(list: MutableList<Header>, selectedPos: Int): MutableList<Header> {

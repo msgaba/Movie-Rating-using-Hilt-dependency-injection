@@ -62,7 +62,7 @@ class HomeActivity : AppCompatActivity(), HeaderItemClickListener,
             adapter = headerAdapter
             layoutManager = headerLayoutManager
         }
-        headerAdapter.list(headerList)
+        headerAdapter.list(headerList())
     }
 
     /** callback for header clicks **/
